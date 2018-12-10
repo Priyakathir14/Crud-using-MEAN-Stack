@@ -1,0 +1,71 @@
+<div class="container">
+   <h3><b>Mobile page</b></h3>
+   <form [formGroup]="productForm" >
+    <div class="row para">
+      <div class="col-md-2"><p>MobileName</p></div>
+      <div class="col-md-2"><p>Memory</p></div>
+      <div class="col-md-2"><p>OS</p></div>
+      <div class="col-md-2"><p>Color</p></div>
+      <div class="col-md-2"><p>Price</p></div>
+      <div class="col-md-2"><p>Action</p></div>
+    </div>
+    <div class="row ">
+      <div class="col-md-2 form-group"><input  type="text" formControlName="MobileName"  class="form-control"[(ngModel)]="product.MobileName" [ngClass]="{ 'is-invalid': submitted && user.MobileName.errors }">
+        <div *ngIf="submitted && user.MobileName.errors" class="invalid-feedback">
+          <div *ngIf="user.MobileName.errors.required"> Name is required</div>
+        </div>
+      </div>
+      <div class="col-md-2 form-group"><input  type="text" formControlName="Memory"   class="form-control"  [(ngModel)]="product.Memory" [ngClass]="{ 'is-invalid': submitted && user.Memory.errors }">
+        <div *ngIf="submitted && user.Memory.errors" class="invalid-feedback">
+          <div *ngIf="user.Memory.errors.required"> Memory is required</div>
+        </div>
+      </div>
+      <div class="col-md-2 form-group"><input  type="text" formControlName="OS"   class="form-control"  [(ngModel)]="product.OS" [ngClass]="{ 'is-invalid': submitted && user.OS.errors }">
+        <div *ngIf="submitted && user.OS.errors" class="invalid-feedback">
+          <div *ngIf="user.OS.errors.required"> OS is required</div>
+        </div>
+      </div>
+      <div class="col-md-2 form-group"><input  type="text" formControlName="Color"   class="form-control"  [(ngModel)]="product.Color" [ngClass]="{ 'is-invalid': submitted && user.Color.errors }">
+        <div *ngIf="submitted && user.Color.errors" class="invalid-feedback">
+          <div *ngIf="user.Color.errors.required"> Color is required</div>
+        </div>
+      </div>
+      <div class="col-md-2 form-group"><input  type="text" formControlName="Price"   class="form-control"  [(ngModel)]="product.Price" [ngClass]="{ 'is-invalid': submitted && user.Price.errors }">
+        <div *ngIf="submitted && user.Price.errors" class="invalid-feedback">
+          <div *ngIf="user.Price.errors.required"> Price is required</div>
+        </div>
+      </div>
+      <div class="col-md-2 form-group">
+      <button class="btn" style=" width: 60px; " (click)="add() ">Add</button>
+      <button class="btn" style=" margin-left: 25px;" (click)="update(product._id)">Update</button>
+      </div>
+    </div>
+    </form>
+    <p style="font-size:22px;margin-top: 70px;"><b>List of products</b></p>
+    <div class="row para">
+      <div class="col-md-2"><p>MobileName</p></div>
+      <div class="col-md-2"><p>Memory</p></div>
+      <div class="col-md-2"><p>OS</p></div>
+      <div class="col-md-2"><p>Color</p></div>
+      <div class="col-md-2"><p>Price</p></div>
+      <div class="col-md-2"><p>Action</p></div>
+    </div>
+
+    <div class="product" *ngFor = "let product of products">
+    <div class="row product">
+        <div class="col-md-2"><p >{{ product.MobileName}}</p></div>
+        <div class="col-md-2"><p >{{ product.Memory}}</p></div>
+        <div class="col-md-2"><p >{{ product.OS}}</p></div>
+        <div class="col-md-2"><p >{{ product.Color}}</p></div>
+        <div class="col-md-2"><p >{{ product.Price}}</p></div>
+        <div class="col-md-2">
+        <button class="btn" style=" width: 60px;" (click)="edit(product) ">Edit</button>
+        <button  class="btn" style=" margin-left: 25px;" (click)="delete(product._id)">Delete </button>
+        </div>
+        </div>
+  </div>
+    <!--<div class="col-md-4">-->
+    <!--</div>-->
+    <!--<div class="col-md-4">-->
+    <!--</div>-->
+</div>

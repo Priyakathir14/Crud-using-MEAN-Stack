@@ -1,0 +1,15 @@
+.para{
+	font-weight: 700;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+.product{
+	margin-bottom: 10px;
+}
+.container{
+	line-height: 15px;
+	font-size: 16px;
+}
+input{
+	margin-bottom: 10px;
+}
